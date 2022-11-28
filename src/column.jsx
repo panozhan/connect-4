@@ -1,6 +1,4 @@
 import React from 'react';
-import {PLAYER} from './constants';
-
 class Column extends React.Component {
     constructor(props) {
         super(props);
@@ -8,28 +6,22 @@ class Column extends React.Component {
     }
 
     handleClicked() {
-        this.props.onColumnClicked(this.columnId);
+        console.log('column clicked ' + this.columnId);
     }
 
     handleMouseEnter() {
-        this.props.onMouseEnter(this.columnId);
+        console.log('on mouse entered column ' + this.columnId);
     }
 
     render() {
-        return <div className="column" 
+        return <div className={`column-${this.columnId}`} 
                 onClick={this.handleClicked.bind(this)}
                 onMouseEnter={this.handleMouseEnter.bind(this)}>
-            {this.props.values.map((e, index) => {
-                const classList = ['innerTile'];
-                if (e === PLAYER.ONE) {
-                    classList.push('player-one-tile');
-                } else if (e === PLAYER.TWO) {
-                    classList.push('player-two-tile');
-                }
-                return <div key={index} className='tile'>
-                    <div className={classList.join(' ')}></div>
-                </div>
-            })}
+            <div className="tile"></div>
+            <div className="tile"></div>
+            <div className="tile"></div>
+            <div className="tile"></div>
+            <div className="tile"></div>
         </div>;
     }
 }

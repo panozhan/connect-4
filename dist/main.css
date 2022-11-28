@@ -31,6 +31,15 @@ body {
     width: 100px;
     position: relative;
 }
+.column-1 {
+    background-color: red;
+}
+.column-2 {
+    background-color: green;
+}
+.column-3 {
+    background-color: yellow;
+}
 
 #board {
     display: flex;
